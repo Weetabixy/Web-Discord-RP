@@ -1,0 +1,18 @@
+{
+  "name": "Web Discord RPC",
+  "version": "1.0",
+  "description": "Extension For My Discord Web RPC",
+  "permissions": ["tabs","storage"],
+  "background": {
+    "scripts": ["thirdparty/socket.io.js","background.js"],
+    "persistent": true
+  },
+  
+  "icons": {
+    "16": "images/logo16.png",
+    "32": "images/logo32.png",
+    "48": "images/logo48.png",
+    "128": "images/logo128.png"
+  },
+  "manifest_version": 2
+}
