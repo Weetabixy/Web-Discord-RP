@@ -1,5 +1,5 @@
 # Web-Discord-RP
-discord rich presence for the web
+Discord rich presence for the web
  
  
 ## Usage
