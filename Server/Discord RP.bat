@@ -1,1 +1,2 @@
-forever start server/index.js
+npm install
+forever start index.js
