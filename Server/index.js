@@ -25,16 +25,23 @@ var rpc = new DiscordRPC.Client(
 )
 
 function setPresence(data){
-    rpc.setActivity(data)
     loadedPresence = data
+    loadedPresence.startTimestamp = new Date().getTime()
+    rpc.setActivity(loadedPresence);
+    
 }
 
 rpc.on("ready",function(){
     setPresence(pendingPresence);
     setInterval(function(){
-        setPresence(pendingPresence);
+
         
-    },16000)
+        if(loadedPresence.details != pendingPresence.details){
+            setPresence(pendingPresence);
+        }
+        
+        
+    },15000)
     
     
 })
