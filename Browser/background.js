@@ -5,17 +5,19 @@ var socket = io.connect('http://localhost', {
 });
 
 setInterval(function () {
-  chrome.tabs.query({ active: true, lastFocusedWindow: true }, function (tabs) {
+  browser.tabs.query({ active: true, lastFocusedWindow: true }, function (tabs) {
     // Selects the open tab
     var activeTab = tabs[0];
-    console.log(activeTab)
-    socket.emit("precenseChange", {
+    
+    var data = {
       details: activeTab.title,
-      state: `Using Chrome ${/Chrome\/([0-9.]+)/.exec(navigator.userAgent)[1]}`,
+      state: `Using ${bowser.name} ${bowser.version}`,
       largeImageKey: "logo",
       largeImageText: "What? You never used Netscape? You know its fun right?",
 
-    });
+    }
+    console.log(data)
+    socket.emit("precenseChange", data);
 
 
   });

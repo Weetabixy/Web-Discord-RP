@@ -1,10 +1,12 @@
 {
+
   "name": "Web Discord RPC",
-  "version": "1.0",
+  "version": "1.1",
   "description": "Extension For My Discord Web RPC",
-  "permissions": ["tabs","storage"],
+  "permissions": ["tabs","http://*/",
+    "https://*/"],
   "background": {
-    "scripts": ["thirdparty/socket.io.js","background.js"],
+    "scripts": ["thirdparty/socket.io.js","background.js","thirdparty/bowser.min.js"],
     "persistent": true
   },
   

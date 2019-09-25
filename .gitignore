@@ -1,2 +1,3 @@
-/Server/node_modules 
-/Server/install.bat
+/Client/node_modules 
+/Client/install.bat
+/Browser/web-ext-artifacts

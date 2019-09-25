@@ -2,7 +2,7 @@ var clientID = '609134054947946507'
 //Websocket Setup
 var server = require("http").createServer();
 var io = require("socket.io")(server);
-
+var cyclesNotLoaded = 0;
 io.on("connection", function(socket){
     socket.on("precenseChange", function(data){
         pendingPresence = data;
@@ -17,6 +17,7 @@ var pendingPresence = {
     largeImageKey: "logo",
     largeImageText: "What? You never used Netscape? You know its fun right?",
     startTimestamp: new Date().getTime(),
+    type: 1
 };
 
 var rpc = new DiscordRPC.Client(
@@ -38,8 +39,8 @@ rpc.on("ready",function(){
         
         if(loadedPresence.details != pendingPresence.details){
             setPresence(pendingPresence);
-        }
-        
+        } 
+    
         
     },15000)
     
