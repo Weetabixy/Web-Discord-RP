@@ -13,7 +13,7 @@
   "license": "UNLICENSED",
   "dependencies": {
     "discord-rpc": "^3.0.2",
-    "socket.io": "^2.2.0",
+    "socket.io": "^2.4.0",
     "forever": "1.0.0"
   }
 }
